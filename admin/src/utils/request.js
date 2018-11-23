@@ -3,7 +3,7 @@ import store from '@/store'
 import { getToken } from '@/utils/auth'
 // 创建axios实例
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api 的 base_url
+  baseURL: "http://localhost:3000/api", // api 的 base_url
   timeout: 5000 // 请求超时时间
 })
 
@@ -12,6 +12,7 @@ const service = axios.create({
 // request拦截器
 service.interceptors.request.use(
   config => {
+    console.log(store.state.token)
     if (store.state.token) {
       config.headers['X-Token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
     }
