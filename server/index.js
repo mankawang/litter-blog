@@ -5,13 +5,10 @@ import bodyParser from 'koa-bodyparser'
 import router from './routes/index'
 //数据库连接文件
 import query from './utils/query'
-
 const app = new koa()
-
 app.use(cors())
 app.use(bodyParser())
 app.use(router.routes())
-
 app.listen(3000,()=>{
-    console.log('node is ok')
+    console.log('node is OK')
 })
