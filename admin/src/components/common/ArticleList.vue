@@ -24,8 +24,6 @@
     //把全局的vuex里面的state和mutations放到计算属性中...
     computed:{
       ...mapState(['id','title','tags','content','isPublished']),
-      ...mapMutations(['SET_CURRENT_ARTICLE'])
-      //...mapActions([''])
     },
     //当该组件创建的时候自动执行里面的请求
     created(){
@@ -62,15 +60,37 @@
         }).catch(err=>{
           console.log(err);
         })
+      },
+      select(index){
+        this.activeIndex = index
+        //当你在选择文章的时候，当前被选中的文章扔到全局状态管理里面
+        this.SET_CURRENT_ARTICLE(this.articleList[index])
+      },
+      ...mapMutations(['SET_CURRENT_ARTICLE'])
+    },
+    //监听vuex数据的变化，如果发生变化，更新articleList数据
+    watch:{
+      title(val){
+        if(this.articleList.length !== 0){
+          this.articleList[this.activeIndex].title = val
+        }
+      },
+      tags(val){
+        if(this.articleList.length !== 0){
+          this.articleList[this.activeIndex].tags = val
+        }
+      },
+      content(val){
+        if(this.articleList.length !== 0){
+          this.articleList[this.activeIndex].content = val
+        }
+      },
+      isPublished(val){
+        if(this.articleList.length !== 0){
+          this.articleList[this.activeIndex].isPublished = val
+        }
       }
-    },
-    select(index){
-      this.activeIndex = index
-      //当你在选择文章的时候，当前被选中的文章扔到全局状态管理里面
-      this.SET_CURRENT_ARTICLE(this.articleList[index])
-    },
-    ...mapMutations(['SET_CURRENT_ARTICLE'])
-  }
+    }
   }
 </script>
 <style type="text/scss"  lang="scss" scoped>
