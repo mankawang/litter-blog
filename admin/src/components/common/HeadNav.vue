@@ -1,7 +1,7 @@
 <template>
   <nav class="head-nav">
     <div class="logo-container">
-      <img src="@/assets/image/logo.png" alt="" class="logo">
+      <img src="@/assets/image/wifi.png" alt="" class="logo">
     </div>
     <div class="content-container">
       <section>
@@ -47,7 +47,8 @@
       border-bottom: 2px solid $base;
       .log-out {
         @include flex;
-        color: $word;
+        color: gray;
+        font-family: "Fira Code";
       }
     }
     h4 {
