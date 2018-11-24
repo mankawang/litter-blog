@@ -29,3 +29,21 @@ init.query('CREATE DATABASE dd_blog',err=>{
     }
 })
 init.end()
+export default function query(sql,values){
+    return new Promise((resolve,reject)=>{
+        pool.getConnection(function(err,connection){
+            if(err){
+                reject(err);
+            }else{
+                connection.query(sql,values,(err,data)=>{
+                    if(err){
+                        reject(err);
+                    }else{
+                        resolve(data);
+                    }
+                    connection.release()
+                })
+            }
+        })
+    })
+}

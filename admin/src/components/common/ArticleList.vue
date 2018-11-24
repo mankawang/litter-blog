@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list">
-      <li class="article"  :class="{active: activeIndex === index, published: isPublished === 1}" v-for="{title,createTime,isPublished,isChosen},index in articleList" @click="select(index)">
+      <li class="article"  :class="{active: activeIndex === index, published: isPublished === 1}" v-for="{title,createTime,isPublished,isChosen,tags},index in articleList" @click="select(index)">
         <header>{{title}}</header>
         <p>{{createTime}}</p>
       </li>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import request from '@/utils/request'
+  import request from '../../utils/request'
   import moment from 'moment'
   import { mapState,mapMutations } from 'vuex'
   export default {

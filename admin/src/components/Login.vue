@@ -1,12 +1,12 @@
 <template>
   <div class="login-container">
     <header class="login-head">
-      <span>mankawang的博客</span>
+      <span>lzy博客系统</span>
       <img class="logo" src="../assets/image/logo.png">
     </header>
     <section class="form">
         <span class="slogan">
-          快来登录吧~
+          登登登登...录！
           <span>/ Login</span>
         </span>
       <input name="user" v-validate="'required'" type="text" id="user" placeholder="请输入用户名" v-model="LoginForm.user">
@@ -21,9 +21,9 @@
 
 <script>
   //设置验证的提示消息
-  import { Validator } from 'vee-validate';
+  import { Validator } from 'vee-validate'
   //引入设置cookie的方法
-  import { setToken } from "@/utils/auth"
+  import { setToken } from "../utils/auth"
 
   const dict = {
     custom: {
@@ -34,12 +34,10 @@
         required: () => '您的密码不能为空'
       }
     }
-  };
-  Validator.localize('en',dict); // changes the locale
-
+  }
+  Validator.localize('en',dict) // changes the locale
   //引入发请求的模块
-  import request from '@/utils/request'
-
+  import request from '../utils/request'
   export default {
     name: "Login",
     data(){
@@ -52,7 +50,7 @@
     },
     methods:{
       //登录方法
-      login:function(){
+      login(){
         //首先拿到验证成功失败的结果，如果成功了，再进行登录，如果失败了，则进行消息提示...
         if(this.errors.items.length === 0){
           request({
@@ -78,10 +76,9 @@
             }
           }).catch(err=>{
             //如果发请求的时候有错误,把错误扔到控制台里面去
-            console.log(err);
+            console.log(err)
           })
         }else{
-          // console.log(this.errors.items);
           this.$notify({
             type:'warn',
             group:'user',
@@ -90,15 +87,6 @@
           })
         }
       }
-    /*},
-    //钩子函数，当组件加载完毕的时候自动执行
-    mounted:function(){
-      request({
-        url:"/index",
-        method:'get'
-      }).then(res=>{
-        console.log(res);
-      })*/
     }
   }
 </script>
@@ -164,3 +152,5 @@
       justify-self: flex-end;
     }
   }
+
+</style>

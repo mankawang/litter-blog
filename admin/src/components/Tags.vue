@@ -33,11 +33,11 @@
   </div>
 </template>
 <script>
-  import Aside from '@/components/common/Aside'
-  import HeadNav from '@/components/common/HeadNav'
-  import ArticleList from '@/components/common/ArticleList'
-  import Editor from '@/components/common/Editor'
-  import request from '@/utils/request'
+  import Aside from '../components/common/Aside'
+  import HeadNav from '../components/common/HeadNav'
+  import ArticleList from '../components/common/ArticleList'
+  import Editor from '../components/common/Editor'
+  import request from '../utils/request'
   export default {
     name: "Tags",
     components:{

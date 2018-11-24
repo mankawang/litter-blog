@@ -35,7 +35,6 @@
   import debounce from 'lodash.debounce'
   //引入发请求方法
   import request from '@/utils/request'
-
   export default {
     name: "Editor",
     data(){
@@ -101,7 +100,7 @@
           const newTag = document.querySelector('#tag-input').value
           if(newTag && this.getTags.indexOf(newTag) === -1){
             this.getTags.push(newTag)
-            //每次按下enter键的时候，会自动保存
+            //每次按下enter键的时候，会自动
             this.autosave()
           }
         }
@@ -123,15 +122,15 @@
         })
       },
       //发布文章
-      publishArticle() {
-        if (!this.isPublished) {
+      publishArticle(){
+        if(!this.isPublished){
           request({
-            url: `/articles/publish/${this.id}`,
-            method: 'put',
-            data: {}
-          }).then(res => {
+            url:`/articles/publish/${this.id}`,
+            method:'put',
+            data:{}
+          }).then(res=>{
             this.$store.commit('SET_PUBLISH_STATE')
-          }).catch(err => {
+          }).catch(err=>{
             console.log(err)
           })
         }

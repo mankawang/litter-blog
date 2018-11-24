@@ -3,6 +3,7 @@ import store from './store'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { getToken } from "@/utils/auth"
+
 //1.创建白名单，哪些页面是不需要权限的
 const whiteList = ['/login']
 //2.设置在页面跳转之前的一些权限判断操作

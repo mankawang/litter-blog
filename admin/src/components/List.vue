@@ -22,14 +22,12 @@
     </div>
   </div>
 </template>
-
 <script>
-  import Aside from '../components/common/Aside'
-  import HeadNav from '../components/common/HeadNav'
-  import ArticleList from '../components/common/ArticleList'
-  import Editor from '../components/common/Editor'
-  import request from '../utils/request'
-
+  import Aside from '@/components/common/Aside'
+  import HeadNav from '@/components/common/HeadNav'
+  import ArticleList from '@/components/common/ArticleList'
+  import Editor from '@/components/common/Editor'
+  import request from '@/utils/request'
   export default {
     name: "List",
     data(){
@@ -63,10 +61,9 @@
   }
 </script>
 
-<style type="text/scss" scoped>
+<style type="text/scss" lang="scss" scoped>
   /*记得引入全局变量的文件*/
   @import '../assets/style/variable';
-
   main {
     @include flex($justify: space-between);
     height: calc(100% - 48px);
@@ -78,7 +75,6 @@
     overflow: auto;
     padding: 0 0.8em 0.5em 0;
     .list {
-      // margin: 0;
       padding: 0;
       list-style: none;
     }

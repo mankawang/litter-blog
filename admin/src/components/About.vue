@@ -8,8 +8,8 @@
   </div>
 </template>
 <script>
-  import Aside from '@/components/common/Aside'
-  import HeadNav from '@/components/common/HeadNav'
+  import Aside from '../components/common/Aside'
+  import HeadNav from '../components/common/HeadNav'
   export default {
     name: "About",
     components:{
