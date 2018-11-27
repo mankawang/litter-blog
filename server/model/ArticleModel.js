@@ -1,4 +1,5 @@
 import query from '../utils/query'
+//转义数据库语句
 import eacape from '../utils/eacape'
 
 class ArticleModel {
@@ -19,6 +20,19 @@ class ArticleModel {
     }
     async publishArticle(id){
         return await query(eacape`UPDATE ARTICLE SET publishTime=NOW(), isPublished=1 WHERE id=${id}`)
+    }
+    //获取书本信息
+    async getAllBooks(){
+        return await query(`SELECT * FROM RD_LIST`)
+    }
+    async addBook({name, author, score}){
+        return await query(eacape`INSERT INTO RD_LIST SET name=${name},author=${author},score=${score}`)
+    }
+    async updateBook(id, {name, author, score}){
+        return await query(eacape`UPDATE RD_LIST SET name=${name},author=${author},score=${score} WHERE id=${id}`)
+    }
+    async deleteBook(id){
+        return await query(eacape`DELETE FROM RD_LIST WHERE id=${id}`)
     }
 }
 export default new ArticleModel() 

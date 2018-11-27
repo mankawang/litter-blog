@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <header class="login-head">
-      <span>lzy博客系统</span>
+      <span>mankawang博客系统</span>
       <img class="logo" src="../assets/image/logo.png">
     </header>
     <section class="form">

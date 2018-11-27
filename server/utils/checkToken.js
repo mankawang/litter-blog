@@ -15,6 +15,7 @@ export default async function(ctx,next){
             }
         }else{
             console.log(err);
+            console.log(1);
             ctx.throw(500) //直接抛出500的错误,在所有加上checkToken的代码里面.
             //抛给了前端的response拦截器了....
         }

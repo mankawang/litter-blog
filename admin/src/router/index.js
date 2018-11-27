@@ -11,6 +11,8 @@ import Tags from '@/components/Tags'
 //引入关于我页面
 import About from '@/components/About'
 
+import ReadingLists from '@/components/ReadingLists'
+
 
 export default new Router({
   routes: [
@@ -29,6 +31,10 @@ export default new Router({
     {
       path:'/about',
       component:About
+    },
+    {
+      path:'/readinglists',
+      component:ReadingLists
     },
     {
       path:'*',

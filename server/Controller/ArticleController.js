@@ -28,5 +28,25 @@ class ArticleController {
         const res = await Article.publishArticle(id)
         ctx.body = res
     }
+    //获取阅读列表
+    async getReading(ctx){
+        const res  = await Article.getAllBooks()
+        ctx.body = res
+    }
+    async addBook(ctx){
+        const book = ctx.request.body
+        console.log(book)
+        const res = await Article.addBook(book)
+        ctx.body = res
+    }
+    async editBook(ctx){
+        const id = ctx.params.id
+        const book = ctx.request.body
+        ctx.body = await Article.updateBook(id, book)
+    }
+    async deleteBook(ctx){
+        const id = ctx.params.id
+        ctx.body = await Article.deleteBook(id)
+    }
 }
 export default new ArticleController() 

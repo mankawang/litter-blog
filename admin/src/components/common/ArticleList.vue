@@ -40,6 +40,19 @@
         if(this.articleList.length !== 0){
           this.SET_CURRENT_ARTICLE(this.articleList[0])
           this.activeIndex = 0;
+          //在标签页面显示标签
+          const tags = []
+          for (let article of this.articleList) {
+            if (article.tags) {
+              for (let tag of article.tags.split(',')) {
+                if (tags.indexOf(tag) === -1) {
+                  tags.push(tag)
+                }
+              }
+            }
+          }
+          //向父组件传值
+          this.$emit('tags', tags)
         }
       }).catch(err=>{
         console.log(err)

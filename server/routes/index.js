@@ -34,4 +34,11 @@ router.delete('/articles/:id',checkToken,ArticleController.deleteArticle)
 router.put('/articles/publish/:id',checkToken,ArticleController.publishArticle)
 
 
+//获取阅读列表
+router.get('/book/rd',checkToken,ArticleController.getReading)
+router.post('/book/add',checkToken,ArticleController.addBook)
+router.post('/book/:id',checkToken,ArticleController.editBook)
+router.delete('/book/:id',checkToken,ArticleController.deleteBook)
+
+
 export default router 
