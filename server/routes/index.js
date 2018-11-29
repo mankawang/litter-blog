@@ -40,5 +40,18 @@ router.post('/book/add',checkToken,ArticleController.addBook)
 router.post('/book/:id',checkToken,ArticleController.editBook)
 router.delete('/book/:id',checkToken,ArticleController.deleteBook)
 
+//获取关于我的数据
+router.get('/briefs',checkToken,ArticleController.briefs)
+//修改关于我
+router.post('/updates',checkToken,ArticleController.updateMe)
+
+
+//前台获取请求
+router.get('/home',ArticleController.getArticles)
+router.get('/introductions',ArticleController.getArticles)
+router.get('/books',ArticleController.getReading)
+router.get(`/article/:id`,ArticleController.getArticles)
+router.get('/about',ArticleController.briefs)
+
 
 export default router 

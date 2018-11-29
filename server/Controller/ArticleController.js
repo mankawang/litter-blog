@@ -48,5 +48,12 @@ class ArticleController {
         const id = ctx.params.id
         ctx.body = await Article.deleteBook(id)
     }
+    async briefs(ctx){
+        ctx.body = await Article.Briefs()
+    }
+    async updateMe(ctx){
+        const id = ctx.params.id
+        ctx.body = await Article.UpdateMe(id)
+    }
 }
 export default new ArticleController() 

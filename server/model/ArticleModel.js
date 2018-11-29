@@ -34,5 +34,13 @@ class ArticleModel {
     async deleteBook(id){
         return await query(eacape`DELETE FROM RD_LIST WHERE id=${id}`)
     }
+    //获取关于我
+    async Briefs(){
+        return await query(`SELECT * FROM ABOUT`)
+    }
+    async UpdateMe(id){
+        return await query(eacape`UPDATE ABOUT SET content=${content} WHERE id=${id}`)
+    }
+
 }
 export default new ArticleModel() 

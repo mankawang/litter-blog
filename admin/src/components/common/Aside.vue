@@ -44,6 +44,7 @@
     width: 3em;
     background: $word;
   }
+
   .link {
     @include flex($flow: column wrap);
     margin-bottom: 3em;
@@ -79,3 +80,4 @@
     }
   }
 </style>
+

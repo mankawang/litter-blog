@@ -1,13 +1,12 @@
 <template>
-  <div class="about-container" style="height:712px">
-    <h1>关于我</h1>
+  <div class="about-container">
     <p v-html="parseMarkdown(about)"></p>
   </div>
 </template>
 
 <script>
-  import parseMarkdown from "../utils/parseMarkdown";
-  import axios from '../utils/request'
+  import parseMarkdown from "../../utils/parseMarkdown";
+  import axios from '../../utils/request'
 
   export default {
     name: "About",
@@ -31,9 +30,6 @@
 </script>
 
 <style type="text/scss" lang="scss" scoped>
-  .about-container{
-    height:100%;
-  }
   h1 {
     padding-bottom: 1em;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
